@@ -1,0 +1,382 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="DirectMonitoring" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd2="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Text</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Linq.Expressions</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.CSharp</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>NPOI.Core</AssemblyReference>
+      <AssemblyReference>System.Linq.Async</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Linq.Expressions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Direct Monitoring Sequence" sap:VirtualizedContainerService.HintSize="800,2400" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd2:DataTable" Name="dt_CoreBanking" />
+      <Variable x:TypeArguments="x:String" Name="htmlContent" />
+      <Variable x:TypeArguments="x:String" Name="coreTrxId" />
+      <Variable x:TypeArguments="x:String" Name="coreRek" />
+      <Variable x:TypeArguments="x:String" Name="coreChannel" />
+      <Variable x:TypeArguments="x:String" Name="coreNominal" />
+      <Variable x:TypeArguments="x:String" Name="coreStatus" />
+      <Variable x:TypeArguments="x:String" Name="statusVerifikasi" />
+      <Variable x:TypeArguments="x:String" Name="catatan" />
+      <Variable x:TypeArguments="x:Boolean" Name="isFoundInHtml" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:ReadRange AddHeaders="True" DisplayName="Read Range Workbook Core Banking Log" sap:VirtualizedContainerService.HintSize="574,120" sap2010:WorkflowViewState.IdRef="ReadRange_1" Range="" SheetName="Core_Transactions" WorkbookPath="Core_Banking_Log.xlsx">
+      <ui:ReadRange.DataTable>
+        <OutArgument x:TypeArguments="sd2:DataTable">
+          <CSharpReference x:TypeArguments="sd2:DataTable" sap2010:WorkflowViewState.IdRef="CSharpReference`1_1">dt_CoreBanking</CSharpReference>
+        </OutArgument>
+      </ui:ReadRange.DataTable>
+    </ui:ReadRange>
+    <ui:ReadTextFile Content="{x:Null}" DisplayName="Read Text File Portal HTML" Encoding="utf-8" FileName="banking-monitoring-portal.html" sap:VirtualizedContainerService.HintSize="574,113.6" sap2010:WorkflowViewState.IdRef="ReadTextFile_1">
+      <ui:ReadTextFile.Result>
+        <OutArgument x:TypeArguments="x:String">
+          <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_2">htmlContent</CSharpReference>
+        </OutArgument>
+      </ui:ReadTextFile.Result>
+    </ui:ReadTextFile>
+    <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" ColumnName="Status_Verifikasi" DefaultValue="{x:Null}" DisplayName="Add Data Column Status Verifikasi" sap:VirtualizedContainerService.HintSize="574,186" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" MaxLength="{x:Null}" Unique="{x:Null}">
+      <ui:AddDataColumn.DataTable>
+        <InArgument x:TypeArguments="sd2:DataTable">
+          <CSharpValue x:TypeArguments="sd2:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_1">dt_CoreBanking</CSharpValue>
+        </InArgument>
+      </ui:AddDataColumn.DataTable>
+    </ui:AddDataColumn>
+    <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" ColumnName="Catatan_Kesesuaian" DefaultValue="{x:Null}" DisplayName="Add Data Column Catatan Kesesuaian" sap:VirtualizedContainerService.HintSize="574,186" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_2" MaxLength="{x:Null}" Unique="{x:Null}">
+      <ui:AddDataColumn.DataTable>
+        <InArgument x:TypeArguments="sd2:DataTable">
+          <CSharpValue x:TypeArguments="sd2:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_2">dt_CoreBanking</CSharpValue>
+        </InArgument>
+      </ui:AddDataColumn.DataTable>
+    </ui:AddDataColumn>
+    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DisplayName="For Each Row in Core Banking DT" sap:VirtualizedContainerService.HintSize="574,1600" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+      <ui:ForEachRow.DataTable>
+        <InArgument x:TypeArguments="sd2:DataTable">
+          <CSharpValue x:TypeArguments="sd2:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_3">dt_CoreBanking</CSharpValue>
+        </InArgument>
+      </ui:ForEachRow.DataTable>
+      <ui:ForEachRow.Body>
+        <ActivityAction x:TypeArguments="sd2:DataRow">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="sd2:DataRow" Name="CurrentRow" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="540,1412" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Assign DisplayName="Assign coreTrxId" sap:VirtualizedContainerService.HintSize="506,113.6" sap2010:WorkflowViewState.IdRef="Assign_1">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">
+                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_3">coreTrxId</CSharpReference>
+                </OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_4">CurrentRow["ID_Transaksi"].ToString().Trim()</CSharpValue>
+                </InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Assign coreRek" sap:VirtualizedContainerService.HintSize="506,113.6" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">
+                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_4">coreRek</CSharpReference>
+                </OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_5">CurrentRow["No_Rekening"].ToString().Trim()</CSharpValue>
+                </InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Assign coreChannel" sap:VirtualizedContainerService.HintSize="506,113.6" sap2010:WorkflowViewState.IdRef="Assign_3">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">
+                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_5">coreChannel</CSharpReference>
+                </OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_6">CurrentRow["Channel"].ToString().Trim()</CSharpValue>
+                </InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Assign coreNominal" sap:VirtualizedContainerService.HintSize="506,113.6" sap2010:WorkflowViewState.IdRef="Assign_4">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:String">
+                  <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_6">coreNominal</CSharpReference>
+                </OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:String">
+                  <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_7">CurrentRow["Nominal_Core"].ToString().Trim()</CSharpValue>
+                </InArgument>
+              </Assign.Value>
+            </Assign>
+            <Assign DisplayName="Check If In HTML" sap:VirtualizedContainerService.HintSize="506,113.6" sap2010:WorkflowViewState.IdRef="Assign_5">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Boolean">
+                  <CSharpReference x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpReference`1_7">isFoundInHtml</CSharpReference>
+                </OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Boolean">
+                  <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_8">htmlContent.Contains(coreTrxId) &amp;&amp; htmlContent.Contains(coreNominal)</CSharpValue>
+                </InArgument>
+              </Assign.Value>
+            </Assign>
+            <If DisplayName="If Sesuai" sap:VirtualizedContainerService.HintSize="506,600" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Condition>
+                <InArgument x:TypeArguments="x:Boolean">
+                  <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_9">!isFoundInHtml</CSharpValue>
+                </InArgument>
+              </If.Condition>
+              <If.Then>
+                <Sequence DisplayName="Then Mismatch" sap:VirtualizedContainerService.HintSize="468,180" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Set MISMATCH" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_6">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_8">statusVerifikasi</CSharpReference>
+                      </OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">MISMATCH</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <Assign DisplayName="Set Catatan Mismatch" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_7">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">
+                        <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_9">catatan</CSharpReference>
+                      </OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">Data transaksi tidak ditemukan atau nominal berbeda di portal</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence DisplayName="Else Cek Anomali" sap:VirtualizedContainerService.HintSize="468,360" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <If DisplayName="If Anomali Bisnis" sap:VirtualizedContainerService.HintSize="434,300" sap2010:WorkflowViewState.IdRef="If_2">
+                    <If.Condition>
+                      <InArgument x:TypeArguments="x:Boolean">
+                        <CSharpValue x:TypeArguments="x:Boolean" sap2010:WorkflowViewState.IdRef="CSharpValue`1_10">coreNominal == "0" || coreRek.Length != 10</CSharpValue>
+                      </InArgument>
+                    </If.Condition>
+                    <If.Then>
+                      <Sequence DisplayName="Then Anomali" sap:VirtualizedContainerService.HintSize="400,180" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign DisplayName="Set ANOMALY" sap:VirtualizedContainerService.HintSize="366,82" sap2010:WorkflowViewState.IdRef="Assign_8">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">
+                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_10">statusVerifikasi</CSharpReference>
+                            </OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">ANOMALY</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign DisplayName="Set Catatan Anomali" sap:VirtualizedContainerService.HintSize="366,82" sap2010:WorkflowViewState.IdRef="Assign_9">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">
+                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_11">catatan</CSharpReference>
+                            </OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">
+                              <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_11">coreNominal == "0" ? "Nominal transaksi bernilai Rp 0" : ("No rekening tidak standar (" + coreRek.Length + " digit)")</CSharpValue>
+                            </InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence DisplayName="Else Match" sap:VirtualizedContainerService.HintSize="400,180" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign DisplayName="Set MATCH" sap:VirtualizedContainerService.HintSize="366,82" sap2010:WorkflowViewState.IdRef="Assign_10">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">
+                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_12">statusVerifikasi</CSharpReference>
+                            </OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">MATCH</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <Assign DisplayName="Set Catatan Match" sap:VirtualizedContainerService.HintSize="366,82" sap2010:WorkflowViewState.IdRef="Assign_11">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:String">
+                              <CSharpReference x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpReference`1_13">catatan</CSharpReference>
+                            </OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:String">Data sesuai dan valid</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </If.Else>
+            </If>
+            <ui:UpdateRowItem ColumnName="Status_Verifikasi" DisplayName="Update Row Status_Verifikasi" sap:VirtualizedContainerService.HintSize="506,120" sap2010:WorkflowViewState.IdRef="UpdateRowItem_1">
+              <ui:UpdateRowItem.Row>
+                <InArgument x:TypeArguments="sd2:DataRow">
+                  <CSharpValue x:TypeArguments="sd2:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_12">CurrentRow</CSharpValue>
+                </InArgument>
+              </ui:UpdateRowItem.Row>
+              <ui:UpdateRowItem.Value>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_13">statusVerifikasi</CSharpValue>
+                </InArgument>
+              </ui:UpdateRowItem.Value>
+            </ui:UpdateRowItem>
+            <ui:UpdateRowItem ColumnName="Catatan_Kesesuaian" DisplayName="Update Row Catatan_Kesesuaian" sap:VirtualizedContainerService.HintSize="506,120" sap2010:WorkflowViewState.IdRef="UpdateRowItem_2">
+              <ui:UpdateRowItem.Row>
+                <InArgument x:TypeArguments="sd2:DataRow">
+                  <CSharpValue x:TypeArguments="sd2:DataRow" sap2010:WorkflowViewState.IdRef="CSharpValue`1_14">CurrentRow</CSharpValue>
+                </InArgument>
+              </ui:UpdateRowItem.Row>
+              <ui:UpdateRowItem.Value>
+                <InArgument x:TypeArguments="x:Object">
+                  <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_15">catatan</CSharpValue>
+                </InArgument>
+              </ui:UpdateRowItem.Value>
+            </ui:UpdateRowItem>
+            <WriteLine DisplayName="Write Line Log" sap:VirtualizedContainerService.HintSize="506,122.4" sap2010:WorkflowViewState.IdRef="WriteLine_1">
+              <InArgument x:TypeArguments="x:String">
+                <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpValue`1_16">"[" + statusVerifikasi + "] ID: " + coreTrxId + " | Rek: " + coreRek + " | Channel: " + coreChannel + " | Nominal: " + coreNominal + " | Catatan: " + catatan</CSharpValue>
+              </InArgument>
+            </WriteLine>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEachRow.Body>
+    </ui:ForEachRow>
+    <ui:WriteRange AddHeaders="True" DisplayName="Write Range Workbook Hasil Monitoring" sap:VirtualizedContainerService.HintSize="574,148" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Hasil_Monitoring" StartingCell="A1" WorkbookPath="Hasil_Monitoring_Settlement.xlsx">
+      <ui:WriteRange.DataTable>
+        <InArgument x:TypeArguments="sd2:DataTable">
+          <CSharpValue x:TypeArguments="sd2:DataTable" sap2010:WorkflowViewState.IdRef="CSharpValue`1_17">dt_CoreBanking</CSharpValue>
+        </InArgument>
+      </ui:WriteRange.DataTable>
+    </ui:WriteRange>
+    <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box Selesai Monitoring" sap:VirtualizedContainerService.HintSize="574,85.6" sap2010:WorkflowViewState.IdRef="MessageBox_1">
+      <ui:MessageBox.Text>
+        <InArgument x:TypeArguments="x:Object">
+          <CSharpValue x:TypeArguments="x:Object" sap2010:WorkflowViewState.IdRef="CSharpValue`1_18">"Proses monitoring settlement selesai (Metode Langsung)!\nTotal data diperiksa: 25 transaksi.\nHasil telah disimpan ke file: Hasil_Monitoring_Settlement.xlsx"</CSharpValue>
+        </InArgument>
+      </ui:MessageBox.Text>
+    </ui:MessageBox>
+  </Sequence>
+</Activity>

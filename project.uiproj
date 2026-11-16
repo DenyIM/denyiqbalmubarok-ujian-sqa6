@@ -1,0 +1,6 @@
+{
+  "Name": "denyiqbalmubarok-ujian-sqa6",
+  "ProjectType": "Process",
+  "Description": "denyiqbalmubarok-ujian-sqa6 - Robotic Banking Monitoring & Settlement Audit",
+  "MainFile": "Main.xaml"
+}

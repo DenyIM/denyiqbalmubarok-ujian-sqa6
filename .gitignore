@@ -1,0 +1,24 @@
+# UiPath Studio generated files
+.local/
+.tmh/
+.storage/
+*.nupkg
+
+# Temporary and Lock files
+~$*.xlsx
+~$*.xls
+~$*.docx
+~$*.pptx
+*.tmp
+*.bak
+*.log
+
+# Visual Studio & Windows artifacts
+.vs/
+Thumbs.db
+Desktop.ini
+.DS_Store
+
+# User-specific settings (optional)
+# Keep .settings/ and .objects/ as they define project settings and Object Repository
+

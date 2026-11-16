@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome Bank Nusantara Portal",
+  "Type": "Screen",
+  "Id": "FPuDbRl-90CICoBHQJr98w",
+  "Reference": "vATfgaFoZEq7HWohGz4eCg/FPuDbRl-90CICoBHQJr98w",
+  "ParentRef": "vATfgaFoZEq7HWohGz4eCg/FOLgw0T_RUKJCVMhPnKS7Q",
+  "Created": "2026-11-15T17:33:31.1823111Z",
+  "Updated": "2026-11-15T17:33:31.1823111Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=26.10.7.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=26.9.0.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
