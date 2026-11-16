@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd2="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:si="clr-namespace:System.IO;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" sap2010:ExpressionActivityEditor.ExpressionActivityEditor="C#" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:sd1="clr-namespace:System.Drawing;assembly=System.Drawing.Common" xmlns:sd2="clr-namespace:System.Drawing;assembly=System.Drawing.Primitives" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -116,7 +116,7 @@
       <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Main Sequence - REFramework Settlement Monitoring" sap:VirtualizedContainerService.HintSize="1177.2,13028" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main Sequence - REFramework Settlement Monitoring" sap:VirtualizedContainerService.HintSize="861.2,14082.4" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_CoreBanking" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_AuditClean" />
@@ -145,30 +145,13 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <Sequence DisplayName="State 1: Init" sap:VirtualizedContainerService.HintSize="694.4,3232" sap2010:WorkflowViewState.IdRef="Sequence_Init">
+    <Sequence DisplayName="State 1: Init" sap:VirtualizedContainerService.HintSize="694.4,4286.4" sap2010:WorkflowViewState.IdRef="Sequence_Init">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
       <WriteLine DisplayName="Log State 1 Init Start" sap:VirtualizedContainerService.HintSize="616,122.4" sap2010:WorkflowViewState.IdRef="WriteLine_Init1" Text="[STATE 1: INIT] Memulai inisialisasi sistem monitoring &amp; membaca file log core banking..." />
-      <TryCatch DisplayName="Try Clean Old Report" sap:VirtualizedContainerService.HintSize="616,350" sap2010:WorkflowViewState.IdRef="TryCatch_CleanReport">
-        <TryCatch.Try>
-          <InvokeMethod DisplayName="Hapus File Hasil Monitoring Lama" sap:VirtualizedContainerService.HintSize="334,136" sap2010:WorkflowViewState.IdRef="InvokeMethod_DeleteOldReport" MethodName="Delete" TargetType="si:File">
-            <InArgument x:TypeArguments="x:String">Hasil_Monitoring_Settlement.xlsx</InArgument>
-          </InvokeMethod>
-        </TryCatch.Try>
-        <TryCatch.Catches>
-          <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="400,160" sap2010:WorkflowViewState.IdRef="Catch_CleanReport">
-            <ActivityAction x:TypeArguments="s:Exception">
-              <ActivityAction.Argument>
-                <DelegateInArgument x:TypeArguments="s:Exception" Name="cleanEx" />
-              </ActivityAction.Argument>
-              <WriteLine DisplayName="Log Warn File In Use" sap:VirtualizedContainerService.HintSize="334,90" sap2010:WorkflowViewState.IdRef="WriteLine_WarnClean" Text="[WARN] Tidak dapat menghapus file laporan lama (mungkin sedang dibuka di Excel). Harap pastikan file ditutup!" />
-            </ActivityAction>
-          </Catch>
-        </TryCatch.Catches>
-      </TryCatch>
       <Assign DisplayName="Assign portalUrl" sap:VirtualizedContainerService.HintSize="616,174.4" sap2010:WorkflowViewState.IdRef="Assign_PortalUrl">
         <Assign.To>
           <OutArgument x:TypeArguments="x:String">
@@ -245,6 +228,13 @@
           </InArgument>
         </ui:AddDataColumn.DataTable>
       </ui:AddDataColumn>
+      <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Percobaan_Ke" DisplayName="Add Column Percobaan_Ke Clean" sap:VirtualizedContainerService.HintSize="616,220" sap2010:WorkflowViewState.IdRef="AddDataCol_Clean5">
+        <ui:AddDataColumn.DataTable>
+          <InArgument x:TypeArguments="sd:DataTable">
+            <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpVal_AddColC5">dt_AuditClean</CSharpValue>
+          </InArgument>
+        </ui:AddDataColumn.DataTable>
+      </ui:AddDataColumn>
       <Assign DisplayName="Clone dt_AuditExceptions" sap:VirtualizedContainerService.HintSize="616,174.4" sap2010:WorkflowViewState.IdRef="Assign_CloneExceptions">
         <Assign.To>
           <OutArgument x:TypeArguments="sd:DataTable">
@@ -282,6 +272,13 @@
         <ui:AddDataColumn.DataTable>
           <InArgument x:TypeArguments="sd:DataTable">
             <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpVal_AddColE4">dt_AuditExceptions</CSharpValue>
+          </InArgument>
+        </ui:AddDataColumn.DataTable>
+      </ui:AddDataColumn>
+      <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Percobaan_Ke" DisplayName="Add Column Percobaan_Ke Ex" sap:VirtualizedContainerService.HintSize="616,220" sap2010:WorkflowViewState.IdRef="AddDataCol_Ex6">
+        <ui:AddDataColumn.DataTable>
+          <InArgument x:TypeArguments="sd:DataTable">
+            <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpVal_AddColE6">dt_AuditExceptions</CSharpValue>
           </InArgument>
         </ui:AddDataColumn.DataTable>
       </ui:AddDataColumn>
@@ -329,6 +326,13 @@
         <ui:AddDataColumn.DataTable>
           <InArgument x:TypeArguments="sd:DataTable">
             <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpVal_AddColHM4">dt_HasilMonitoring</CSharpValue>
+          </InArgument>
+        </ui:AddDataColumn.DataTable>
+      </ui:AddDataColumn>
+      <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Percobaan_Ke" DisplayName="Add Column Percobaan_Ke HM" sap:VirtualizedContainerService.HintSize="616,220" sap2010:WorkflowViewState.IdRef="AddDataCol_HM5">
+        <ui:AddDataColumn.DataTable>
+          <InArgument x:TypeArguments="sd:DataTable">
+            <CSharpValue x:TypeArguments="sd:DataTable" sap2010:WorkflowViewState.IdRef="CSharpVal_AddColHM5">dt_HasilMonitoring</CSharpValue>
           </InArgument>
         </ui:AddDataColumn.DataTable>
       </ui:AddDataColumn>
@@ -462,7 +466,7 @@
                   <CSharpValue x:TypeArguments="x:String" sap2010:WorkflowViewState.IdRef="CSharpVal_LogState3Start">"[STATE 3: PROCESS TRANSACTION] Menguji transaksi " + coreTrxId + " pada portal web..."</CSharpValue>
                 </InArgument>
               </WriteLine>
-              <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Chrome Bank Nusantara Portal" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="451.2,1626.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="ddb29a04-3d3b-46ac-ad94-d9c8ee358a45" Version="V2">
+              <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Chrome Bank Nusantara Portal" HealingAgentBehavior="Job" sap:VirtualizedContainerService.HintSize="451.2,1626.4" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="ddb29a04-3d3b-46ac-ad94-d9c8ee358a45" Version="V2">
                 <uix:NApplicationCard.Body>
                   <ActivityAction x:TypeArguments="x:Object">
                     <ActivityAction.Argument>
@@ -485,6 +489,9 @@
                         </uix:NTypeInto.Text>
                         <uix:NTypeInto.VerifyOptions>
                           <uix:VerifyExecutionTypeIntoOptions Mode="Appears">
+                            <uix:VerifyExecutionTypeIntoOptions.Retry>
+                              <InArgument x:TypeArguments="x:Boolean" />
+                            </uix:VerifyExecutionTypeIntoOptions.Retry>
                             <uix:VerifyExecutionTypeIntoOptions.Timeout>
                               <InArgument x:TypeArguments="x:Double" />
                             </uix:VerifyExecutionTypeIntoOptions.Timeout>
@@ -497,6 +504,9 @@
                         </uix:NClick.Target>
                         <uix:NClick.VerifyOptions>
                           <uix:VerifyExecutionOptions Mode="Appears">
+                            <uix:VerifyExecutionOptions.Retry>
+                              <InArgument x:TypeArguments="x:Boolean" />
+                            </uix:VerifyExecutionOptions.Retry>
                             <uix:VerifyExecutionOptions.Timeout>
                               <InArgument x:TypeArguments="x:Double" />
                             </uix:VerifyExecutionOptions.Timeout>
@@ -695,7 +705,7 @@
               <ui:AddDataRow DataRow="{x:Null}" DisplayName="Add Data Row dt_AuditClean" sap:VirtualizedContainerService.HintSize="451.2,220" sap2010:WorkflowViewState.IdRef="AddDataRow_Clean">
                 <ui:AddDataRow.ArrayRow>
                   <InArgument x:TypeArguments="s:Object[]">
-                    <CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpVal_RowClean">new object[] { coreTrxId, coreWaktu, coreRek, coreChannel, coreNominal, coreStatus, webAmount.Trim(), webStatus.Trim(), "SUCCESS", "Data sesuai dan valid" }</CSharpValue>
+                    <CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpVal_RowClean">new object[] { coreTrxId, coreWaktu, coreRek, coreChannel, coreNominal, coreStatus, webAmount.Trim(), webStatus.Trim(), "SUCCESS", "Data sesuai dan valid", "Percobaan ke-" + (retryCount + 1).ToString() }</CSharpValue>
                   </InArgument>
                 </ui:AddDataRow.ArrayRow>
                 <ui:AddDataRow.DataTable>
@@ -707,7 +717,7 @@
               <ui:AddDataRow DataRow="{x:Null}" DisplayName="Add Data Row dt_HasilMonitoring Clean" sap:VirtualizedContainerService.HintSize="451.2,220" sap2010:WorkflowViewState.IdRef="AddDataRow_HMClean">
                 <ui:AddDataRow.ArrayRow>
                   <InArgument x:TypeArguments="s:Object[]">
-                    <CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpVal_RowHMClean">new object[] { coreTrxId, coreWaktu, coreRek, coreChannel, coreNominal, coreStatus, webAmount.Trim(), webStatus.Trim(), "MATCH", "Data sesuai dan valid" }</CSharpValue>
+                    <CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpVal_RowHMClean">new object[] { coreTrxId, coreWaktu, coreRek, coreChannel, coreNominal, coreStatus, webAmount.Trim(), webStatus.Trim(), "MATCH", "Data sesuai dan valid", "Percobaan ke-" + (retryCount + 1).ToString() }</CSharpValue>
                   </InArgument>
                 </ui:AddDataRow.ArrayRow>
                 <ui:AddDataRow.DataTable>
@@ -765,7 +775,7 @@
                   <ui:AddDataRow DataRow="{x:Null}" DisplayName="Add Data Row dt_AuditExceptions BRE" sap:VirtualizedContainerService.HintSize="451.2,220" sap2010:WorkflowViewState.IdRef="AddDataRow_ExBRE">
                     <ui:AddDataRow.ArrayRow>
                       <InArgument x:TypeArguments="s:Object[]">
-                        <CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpVal_RowExBRE">new object[] { coreTrxId, coreWaktu, coreRek, coreChannel, coreNominal, coreStatus, (webAmount != null ? webAmount.Trim() : "-"), (webStatus != null ? webStatus.Trim() : "-"), "BusinessRuleException", bre.Message, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") }</CSharpValue>
+                        <CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpVal_RowExBRE">new object[] { coreTrxId, coreWaktu, coreRek, coreChannel, coreNominal, coreStatus, (webAmount != null ? webAmount.Trim() : "-"), (webStatus != null ? webStatus.Trim() : "-"), "BusinessRuleException", bre.Message, "Percobaan ke-" + (retryCount + 1).ToString(), DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") }</CSharpValue>
                       </InArgument>
                     </ui:AddDataRow.ArrayRow>
                     <ui:AddDataRow.DataTable>
@@ -777,7 +787,7 @@
                   <ui:AddDataRow DataRow="{x:Null}" DisplayName="Add Data Row dt_HasilMonitoring BRE" sap:VirtualizedContainerService.HintSize="451.2,220" sap2010:WorkflowViewState.IdRef="AddDataRow_HMBRE">
                     <ui:AddDataRow.ArrayRow>
                       <InArgument x:TypeArguments="s:Object[]">
-                        <CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpVal_RowHMBRE">new object[] { coreTrxId, coreWaktu, coreRek, coreChannel, coreNominal, coreStatus, (webAmount != null ? webAmount.Trim() : "-"), (webStatus != null ? webStatus.Trim() : "-"), "ANOMALY", bre.Message }</CSharpValue>
+                        <CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpVal_RowHMBRE">new object[] { coreTrxId, coreWaktu, coreRek, coreChannel, coreNominal, coreStatus, (webAmount != null ? webAmount.Trim() : "-"), (webStatus != null ? webStatus.Trim() : "-"), "ANOMALY", bre.Message, "Percobaan ke-" + (retryCount + 1).ToString() }</CSharpValue>
                       </InArgument>
                     </ui:AddDataRow.ArrayRow>
                     <ui:AddDataRow.DataTable>
@@ -880,7 +890,7 @@
                         <ui:AddDataRow DataRow="{x:Null}" DisplayName="Add Data Row dt_AuditExceptions SE" sap:VirtualizedContainerService.HintSize="416,220" sap2010:WorkflowViewState.IdRef="AddDataRow_ExSE">
                           <ui:AddDataRow.ArrayRow>
                             <InArgument x:TypeArguments="s:Object[]">
-                              <CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpVal_RowExSE">new object[] { coreTrxId, coreWaktu, coreRek, coreChannel, coreNominal, coreStatus, "-", "-", "SystemException", se.Message, DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") }</CSharpValue>
+                              <CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpVal_RowExSE">new object[] { coreTrxId, coreWaktu, coreRek, coreChannel, coreNominal, coreStatus, "-", "-", "SystemException", se.Message, "Percobaan ke-" + (retryCount + 1).ToString(), DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") }</CSharpValue>
                             </InArgument>
                           </ui:AddDataRow.ArrayRow>
                           <ui:AddDataRow.DataTable>
@@ -892,7 +902,7 @@
                         <ui:AddDataRow DataRow="{x:Null}" DisplayName="Add Data Row dt_HasilMonitoring SE" sap:VirtualizedContainerService.HintSize="416,220" sap2010:WorkflowViewState.IdRef="AddDataRow_HMSE">
                           <ui:AddDataRow.ArrayRow>
                             <InArgument x:TypeArguments="s:Object[]">
-                              <CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpVal_RowHMSE">new object[] { coreTrxId, coreWaktu, coreRek, coreChannel, coreNominal, coreStatus, "-", "-", "ERROR", se.Message }</CSharpValue>
+                              <CSharpValue x:TypeArguments="s:Object[]" sap2010:WorkflowViewState.IdRef="CSharpVal_RowHMSE">new object[] { coreTrxId, coreWaktu, coreRek, coreChannel, coreNominal, coreStatus, "-", "-", "ERROR", se.Message, "Percobaan ke-" + (retryCount + 1).ToString() }</CSharpValue>
                             </InArgument>
                           </ui:AddDataRow.ArrayRow>
                           <ui:AddDataRow.DataTable>

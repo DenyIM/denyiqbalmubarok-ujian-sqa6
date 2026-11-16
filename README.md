@@ -92,9 +92,9 @@ File output **`Hasil_Monitoring_Settlement.xlsx`** memiliki 3 sheet terpisah:
 
 | Sheet | Jumlah Data | Deskripsi & Kolom |
 | :--- | :---: | :--- |
-| **`Audit_Clean`** | 22 Baris | Khusus transaksi yang berstatus **SUCCESS** (valid dan cocok 100% antara Core Banking dan Web Portal).<br/>*Kolom: ID_Transaksi, Waktu_Transaksi, No_Rekening, Channel, Nominal_Core, Status_Core, Nominal_Portal, Status_Portal, Status_Verifikasi, Catatan* |
-| **`Audit_Exceptions`** | 3 Baris | Khusus transaksi yang terkena **BusinessRuleException (BRE)** atau **SystemException (SE)**.<br/>*Kolom: ID_Transaksi, Waktu_Transaksi, No_Rekening, Channel, Nominal_Core, Status_Core, Nominal_Portal, Status_Portal, Tipe_Exception, Pesan_Exception, Waktu_Log* |
-| **`Hasil_Monitoring`** | 25 Baris | **Master Rangkuman** seluruh transaksi yang telah diproses lengkap dengan status verifikasi (`MATCH` / `ANOMALY`) dan catatan kesesuaian. |
+| **`Audit_Clean`** | 22 Baris | Khusus transaksi yang berstatus **SUCCESS** (valid dan cocok 100% antara Core Banking dan Web Portal).<br/>*Kolom: ID_Transaksi, Waktu_Transaksi, No_Rekening, Channel, Nominal_Core, Status_Core, Nominal_Portal, Status_Portal, Status_Verifikasi, Catatan, Percobaan_Ke* |
+| **`Audit_Exceptions`** | 3 Baris | Khusus transaksi yang terkena **BusinessRuleException (BRE)** atau **SystemException (SE)**.<br/>*Kolom: ID_Transaksi, Waktu_Transaksi, No_Rekening, Channel, Nominal_Core, Status_Core, Nominal_Portal, Status_Portal, Tipe_Exception, Pesan_Exception, Percobaan_Ke, Waktu_Log* |
+| **`Hasil_Monitoring`** | 25 Baris | **Master Rangkuman** seluruh transaksi yang telah diproses lengkap dengan status verifikasi (`MATCH` / `ANOMALY`), catatan kesesuaian, dan riwayat percobaan (*Percobaan_Ke*). |
 
 ---
 
@@ -136,7 +136,26 @@ sequenceDiagram
     Robot->>Robot: Catat log: [STATE 3: SUCCESS] Transaksi ke-7 selesai!
 ```
 
----
+### 📋 Panduan Langkah Pengujian Manual (Simulasi Freeze Transaksi ke-7):
+1. **Jalankan Bot**: Buka `Main.xaml` di UiPath Studio lalu tekan **F5** (Run).
+2. **Amati Single-Browser Persistence**:
+   - Google Chrome hanya akan dibuka **sekali saja di awal** (Transaksi 1).
+   - Pada transaksi 2 s/d 6, robot menggunakan jendela browser yang sama. Nilai ID lama pada input box dihapus otomatis, ID baru diketikkan, dan tombol cari ditekan tanpa menutup browser.
+3. **Lakukan Eksperimen Manual**:
+   - Saat panel Output menampilkan: `[STATE 2: GET DATA] Mengambil transaksi ke-7 dari 25 | ID: TRX-2026-0007 (Percobaan ke-1)`, segera **tutup jendela Google Chrome secara manual** (klik tombol silang `X` di kanan atas browser).
+4. **Pantau Reaksi Auto-Recovery Robot**:
+   - Robot mendeteksi ketiadaan browser dan mencatat:
+     `[STATE 3: SYSTEM ERROR] Transaksi TRX-2026-0007 (ke-7) mengalami SystemException...`
+   - Robot memicu Re-Init dan mencatat:
+     `[RE-INIT] Terdeteksi kendala sistem/browser freeze pada transaksi ke-7. Membuka kembali Chrome & melakukan Auto-Retry (Percobaan ke-2 dari 3)...`
+   - Robot menunggu jeda pemulihan 2 detik, lalu **secara otomatis membuka kembali Google Chrome**.
+   - Robot memproses ulang transaksi ke-7 dan mencatat:
+     `[STATE 3: SUCCESS] Transaksi TRX-2026-0007 (ke-7) valid dan terverifikasi MATCH.`
+5. **Amati Kelanjutan Transaksi 8 s/d 25**:
+   - Robot melanjutkan pemrosesan transaksi 8 s/d 25 pada jendela Chrome yang baru dibuka tersebut tanpa menutup lagi hingga akhir transaksi ke-25.
+6. **Verifikasi Hasil di Excel (`Hasil_Monitoring_Settlement.xlsx`)**:
+   - Buka sheet `Audit_Clean` atau `Hasil_Monitoring`.
+   - Perhatikan kolom **`Percobaan_Ke`**: Seluruh transaksi bernilai `"Percobaan ke-1"`, **kecuali Transaksi ke-7 (`TRX-2026-0007`) yang tercatat bernilai `"Percobaan ke-2"`**. Ini adalah bukti otentik bahwa auto-retry berhasil dijalankan dan tercatat dalam laporan audit!
 
 ## 📁 Struktur Direktori
 
